@@ -17,7 +17,7 @@ public class BD {
     private static Connection conn = null;
     public static String bdNombre = "localhost";
     public static String user = "root";
-    public static String pass = "20075321818";
+    public static String pass = "pass";
     
     public static Connection obtener() throws SQLException, ClassNotFoundException
     {
@@ -44,6 +44,6 @@ public class BD {
     public static void setBd(String nombre){
         bdNombre = nombre;
         user = "root2";
-        pass = "20075321818";
+        pass = "pass";
     }
 }
