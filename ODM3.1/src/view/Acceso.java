@@ -129,7 +129,7 @@ public class Acceso extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        // LEER XML
+        // LEER XML desde internet
         /*  LICENCIA DE PAGO COMPLETO   */
         entrar(); 
         /*  LICENCIA MENSUAL            */
