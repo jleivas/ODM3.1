@@ -6,7 +6,6 @@
 package view;
 
 import com.mxrck.autocompleter.TextAutoCompleter;
-import entities.Cristal;
 import entities.Lente;
 import entities.RegistroBaja;
 import fn.FnRegistroBajas;
@@ -15,8 +14,6 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
