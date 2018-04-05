@@ -132,6 +132,7 @@ public class Acceso extends javax.swing.JFrame {
         // LEER XML desde internet
         /*  LICENCIA DE PAGO COMPLETO   */
         entrar(); 
+        int i;
         /*  LICENCIA MENSUAL            */
 //        Procesos pr = new Procesos();
 //        try {
