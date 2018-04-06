@@ -12,7 +12,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import static view.ContentAdmin.principalAdmin;
 import view.Progreso;
-import view.VAbrirFicha;
 import view.VAbrirFicha1;
 import view.VClientes;
 import view.VCrearFicha;
@@ -20,13 +19,11 @@ import view.VCristales;
 import view.VDatosEmpresa;
 import view.VDescuentos;
 import view.VDoctores;
-import view.VFichas;
 import view.VHistorialPago;
 import view.VInstituciones;
 import view.VLentes;
 import view.VMisFichas;
 import view.VMostrarFichas;
-import view.VNuevaFicha;
 import view.VRegistroBajas;
 import view.VReporteFichas;
 import view.VTipoPago;
@@ -53,13 +50,6 @@ public class Boton {
     }
     
     public void nuevaFicha() throws SQLException, ClassNotFoundException{
-//        VNuevaFicha p1 = new VNuevaFicha();
-//        p1.setSize(ancho, alto);
-//        p1.setLocation(locat, locat);
-//        principalAdmin.removeAll();
-//        principalAdmin.add(p1,BorderLayout.CENTER);
-//        principalAdmin.revalidate();
-//        principalAdmin.repaint();
         crearFicha();
     }
     
