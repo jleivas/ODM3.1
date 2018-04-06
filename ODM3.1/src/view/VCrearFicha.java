@@ -94,7 +94,7 @@ public class VCrearFicha extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         txtNombreCliente = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        txtTelefonoCliente = new javax.swing.JTextField();
+        txtTelefonoCliente2 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         txtMailCliente = new javax.swing.JTextField();
         txtDireccionCliente = new javax.swing.JTextField();
@@ -109,6 +109,8 @@ public class VCrearFicha extends javax.swing.JPanel {
         jLabel15 = new javax.swing.JLabel();
         lblIdInstitucion = new javax.swing.JLabel();
         chkExtranjero = new javax.swing.JCheckBox();
+        jLabel44 = new javax.swing.JLabel();
+        txtTelefonoCliente1 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         txtArmazonLejos = new javax.swing.JTextField();
@@ -374,11 +376,11 @@ public class VCrearFicha extends javax.swing.JPanel {
             }
         });
 
-        jLabel8.setText("Tel.");
+        jLabel8.setText("Tel 2");
 
-        txtTelefonoCliente.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtTelefonoCliente2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtTelefonoClienteKeyTyped(evt);
+                txtTelefonoCliente2KeyTyped(evt);
             }
         });
 
@@ -431,6 +433,14 @@ public class VCrearFicha extends javax.swing.JPanel {
 
         chkExtranjero.setText("Cliente extranjero");
 
+        jLabel44.setText("Tel 1");
+
+        txtTelefonoCliente1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoCliente1KeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -459,22 +469,28 @@ public class VCrearFicha extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel44))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addComponent(jLabel9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(126, 126, 126)
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(txtTelefonoCliente1)
+                                .addGap(58, 58, 58)))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(chkExtranjero, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
                                 .addComponent(lblIdInstitucion, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtMailCliente)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtTelefonoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                            .addComponent(txtTelefonoCliente2, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
                             .addComponent(txtCiudad))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel13)
@@ -493,7 +509,9 @@ public class VCrearFicha extends javax.swing.JPanel {
                     .addComponent(jLabel5)
                     .addComponent(txtInstitucion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblIdInstitucion)
-                    .addComponent(chkExtranjero))
+                    .addComponent(chkExtranjero)
+                    .addComponent(jLabel44)
+                    .addComponent(txtTelefonoCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -501,7 +519,7 @@ public class VCrearFicha extends javax.swing.JPanel {
                     .addComponent(jLabel7)
                     .addComponent(txtNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8)
-                    .addComponent(txtTelefonoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTelefonoCliente2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9)
                     .addComponent(txtMailCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -661,7 +679,7 @@ public class VCrearFicha extends javax.swing.JPanel {
                                 .addComponent(chkCapaLejos)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(chkPlusMaxLejos)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addContainerGap(24, Short.MAX_VALUE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -868,8 +886,7 @@ public class VCrearFicha extends javax.swing.JPanel {
                                         .addComponent(txtOICercaCIL)))
                                 .addGroup(jPanel5Layout.createSequentialGroup()
                                     .addGap(22, 22, 22)
-                                    .addComponent(txtOICercaESF, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(txtOICercaESF, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGap(34, 34, 34)
                             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1126,7 +1143,7 @@ public class VCrearFicha extends javax.swing.JPanel {
         btnGuardar.setBorder(null);
         btnGuardar.setBorderPainted(false);
         btnGuardar.setContentAreaFilled(false);
-        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnGuardar.setIconTextGap(-3);
         btnGuardar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botonGraph/btnInfo3.jpg"))); // NOI18N
@@ -1423,7 +1440,11 @@ public class VCrearFicha extends javax.swing.JPanel {
                 cliente.setEmail(txtMailCliente.getText());
                 cliente.setNombre(txtNombreCliente.getText().toUpperCase());
                 cliente.setSexo(cboSexo.getSelectedIndex());
-                cliente.setTelefono(txtTelefonoCliente.getText());
+                if(txtTelefonoCliente2.getText() != null || txtTelefonoCliente2.getText().length() > 0){
+                    cliente.setTelefono(txtTelefonoCliente1.getText() + " / " +txtTelefonoCliente2.getText());
+                }else{
+                    cliente.setTelefono(txtTelefonoCliente1.getText());
+                }
                 //actualizar
                 if(!load.actualizarCliente(cliente)){
                     JOptionPane.showMessageDialog(null, "No se pudo completar la operación [1100]", "Error al guardar Ficha",JOptionPane.WARNING_MESSAGE);
@@ -1439,7 +1460,11 @@ public class VCrearFicha extends javax.swing.JPanel {
                 cliente.setEmail(txtMailCliente.getText());
                 cliente.setNombre(txtNombreCliente.getText().toUpperCase());
                 cliente.setSexo(cboSexo.getSelectedIndex());
-                cliente.setTelefono(txtTelefonoCliente.getText());
+                if(txtTelefonoCliente2.getText() != null || txtTelefonoCliente2.getText().length() > 0){
+                    cliente.setTelefono(txtTelefonoCliente1.getText() + " / " +txtTelefonoCliente2.getText());
+                }else{
+                    cliente.setTelefono(txtTelefonoCliente1.getText());
+                }
                 cliente.setEstado(1);
                 ficha.setCliente(cliente);
                 //guardar
@@ -1846,13 +1871,13 @@ public class VCrearFicha extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMailClienteActionPerformed
 
-    private void txtTelefonoClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoClienteKeyTyped
+    private void txtTelefonoCliente2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoCliente2KeyTyped
         int largo = 12;
-        if(txtTelefonoCliente.getText().length() >= largo){
+        if(txtTelefonoCliente2.getText().length() >= largo){
             evt.consume();
             JOptionPane.showMessageDialog(null, "El teléfono debe contener hasta 12 caracteres", "Error de ingreso de datos", JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_txtTelefonoClienteKeyTyped
+    }//GEN-LAST:event_txtTelefonoCliente2KeyTyped
 
     private void txtNombreClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreClienteKeyTyped
         int largo = 45;
@@ -1877,7 +1902,16 @@ public class VCrearFicha extends javax.swing.JPanel {
             temp = load.cargarCliente(rutCliente);
             if(temp != null){
                 txtNombreCliente.setText(temp.getNombre());
-                txtTelefonoCliente.setText(temp.getTelefono());
+                if(temp.getTelefono() != null){
+                    if(temp.getTelefono().contains("/")){
+                        int ind = temp.getTelefono().indexOf("/");
+                        txtTelefonoCliente1.setText(temp.getTelefono().substring(0, ind));
+                        txtTelefonoCliente2.setText(temp.getTelefono().substring(ind, temp.getTelefono().length()));
+                    }else{
+                        txtTelefonoCliente1.setText(temp.getTelefono());
+                        txtTelefonoCliente2.setText("");
+                    } 
+                }
                 txtMailCliente.setText(temp.getEmail());
                 txtDireccionCliente.setText(temp.getDireccion());
                 txtComuna.setText(temp.getComuna());
@@ -1909,7 +1943,16 @@ public class VCrearFicha extends javax.swing.JPanel {
             temp = load.cargarCliente(rutCliente);
             if(temp != null){
                 txtNombreCliente.setText(temp.getNombre());
-                txtTelefonoCliente.setText(temp.getTelefono());
+                if(temp.getTelefono() != null){
+                    if(temp.getTelefono().contains("/")){
+                        int ind = temp.getTelefono().indexOf("/");
+                        txtTelefonoCliente1.setText(temp.getTelefono().substring(0, ind));
+                        txtTelefonoCliente2.setText(temp.getTelefono().substring(ind, temp.getTelefono().length()));
+                    }else{
+                        txtTelefonoCliente1.setText(temp.getTelefono());
+                        txtTelefonoCliente2.setText("");
+                    } 
+                }
                 txtMailCliente.setText(temp.getEmail());
                 txtDireccionCliente.setText(temp.getDireccion());
                 txtComuna.setText(temp.getComuna());
@@ -1918,7 +1961,7 @@ public class VCrearFicha extends javax.swing.JPanel {
                 txtEdad.setValue((int) temp.getEdad());
             }else{
                 txtNombreCliente.setText("");
-                txtTelefonoCliente.setText("");
+                txtTelefonoCliente2.setText("");
                 txtMailCliente.setText("");
                 txtDireccionCliente.setText("");
                 txtComuna.setText("");
@@ -1989,6 +2032,14 @@ public class VCrearFicha extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_txtEntregaKeyTyped
 
+    private void txtTelefonoCliente1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoCliente1KeyTyped
+        int largo = 12;
+        if(txtTelefonoCliente1.getText().length() >= largo){
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "El teléfono debe contener hasta 12 caracteres", "Error de ingreso de datos", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_txtTelefonoCliente1KeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
@@ -2041,6 +2092,7 @@ public class VCrearFicha extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -2104,7 +2156,8 @@ public class VCrearFicha extends javax.swing.JPanel {
     private javax.swing.JTextArea txtObs;
     private javax.swing.JTextField txtRutCliente;
     private javax.swing.JTextField txtSaldo;
-    private javax.swing.JTextField txtTelefonoCliente;
+    private javax.swing.JTextField txtTelefonoCliente1;
+    private javax.swing.JTextField txtTelefonoCliente2;
     private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 
@@ -2300,7 +2353,7 @@ public class VCrearFicha extends javax.swing.JPanel {
         txtObs.setText("");
         txtRutCliente.setText("");
         txtSaldo.setText("$ 0");
-        txtTelefonoCliente.setText("");
+        txtTelefonoCliente2.setText("");
         txtArmazonCerca.setText("");
         txtArmazonLejos.setText("");
         txtTotal.setText("0");

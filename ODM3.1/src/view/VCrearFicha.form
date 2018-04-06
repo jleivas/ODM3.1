@@ -408,17 +408,26 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel12" alignment="0" min="-2" pref="39" max="-2" attributes="0"/>
                               <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
-                                  <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="126" max="-2" attributes="0"/>
+                                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Component id="txtTelefonoCliente1" max="32767" attributes="0"/>
+                                          <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
                                           <Component id="chkExtranjero" min="-2" pref="124" max="-2" attributes="0"/>
-                                          <EmptySpace pref="113" max="32767" attributes="0"/>
+                                          <EmptySpace pref="116" max="32767" attributes="0"/>
                                           <Component id="lblIdInstitucion" min="-2" pref="8" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="txtMailCliente" max="32767" attributes="0"/>
@@ -426,7 +435,7 @@
                               </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txtTelefonoCliente" pref="108" max="32767" attributes="0"/>
+                                      <Component id="txtTelefonoCliente2" pref="108" max="32767" attributes="0"/>
                                       <Component id="txtCiudad" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -451,6 +460,8 @@
                               <Component id="txtInstitucion" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="lblIdInstitucion" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="chkExtranjero" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel44" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtTelefonoCliente1" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -459,7 +470,7 @@
                               <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtNombreCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtTelefonoCliente" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtTelefonoCliente2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="txtMailCliente" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -518,12 +529,12 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel8">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Tel."/>
+                    <Property name="text" type="java.lang.String" value="Tel 2"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtTelefonoCliente">
+                <Component class="javax.swing.JTextField" name="txtTelefonoCliente2">
                   <Events>
-                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTelefonoClienteKeyTyped"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTelefonoCliente2KeyTyped"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel9">
@@ -609,6 +620,16 @@
                     <Property name="text" type="java.lang.String" value="Cliente extranjero"/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JLabel" name="jLabel44">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tel 1"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txtTelefonoCliente1">
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTelefonoCliente1KeyTyped"/>
+                  </Events>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jPanel3">
@@ -681,7 +702,7 @@
                                           <Component id="chkCapaLejos" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="chkPlusMaxLejos" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <EmptySpace pref="24" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -1491,7 +1512,7 @@
                     <Property name="borderPainted" type="boolean" value="false"/>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Cursor de Mano"/>
+                      <Color id="Default Cursor"/>
                     </Property>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                     <Property name="iconTextGap" type="int" value="-3"/>

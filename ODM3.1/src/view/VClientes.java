@@ -108,7 +108,7 @@ public class VClientes extends javax.swing.JPanel {
         btnBuscar.setBorder(null);
         btnBuscar.setBorderPainted(false);
         btnBuscar.setContentAreaFilled(false);
-        btnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnBuscar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnBuscar.setIconTextGap(-3);
         btnBuscar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botonGraph/btnDefault3.jpg"))); // NOI18N
@@ -127,7 +127,7 @@ public class VClientes extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Rut", "Nombre", "Email", "Telefono"
+                "Rut", "Nombre", "Email", "Telefonos"
             }
         ));
         jScrollPane1.setViewportView(tblListar);
@@ -140,7 +140,7 @@ public class VClientes extends javax.swing.JPanel {
         btnAbrir.setBorder(null);
         btnAbrir.setBorderPainted(false);
         btnAbrir.setContentAreaFilled(false);
-        btnAbrir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAbrir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnAbrir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnAbrir.setIconTextGap(-3);
         btnAbrir.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botonGraph/btnDefault3.jpg"))); // NOI18N
@@ -159,7 +159,7 @@ public class VClientes extends javax.swing.JPanel {
         btnEliminar.setBorder(null);
         btnEliminar.setBorderPainted(false);
         btnEliminar.setContentAreaFilled(false);
-        btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnEliminar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnEliminar.setIconTextGap(-3);
         btnEliminar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botonGraph/btnDanger3.jpg"))); // NOI18N
@@ -178,7 +178,7 @@ public class VClientes extends javax.swing.JPanel {
         btnRestaurar.setBorder(null);
         btnRestaurar.setBorderPainted(false);
         btnRestaurar.setContentAreaFilled(false);
-        btnRestaurar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRestaurar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnRestaurar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnRestaurar.setIconTextGap(-3);
         btnRestaurar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botonGraph/btnDefault3.jpg"))); // NOI18N
@@ -197,7 +197,7 @@ public class VClientes extends javax.swing.JPanel {
         btnBuscarEliminados.setBorder(null);
         btnBuscarEliminados.setBorderPainted(false);
         btnBuscarEliminados.setContentAreaFilled(false);
-        btnBuscarEliminados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBuscarEliminados.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnBuscarEliminados.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnBuscarEliminados.setIconTextGap(-3);
         btnBuscarEliminados.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botonGraph/btnDefault3.jpg"))); // NOI18N
@@ -254,7 +254,7 @@ public class VClientes extends javax.swing.JPanel {
 
         jLabel2.setText("Nombre");
 
-        jLabel3.setText("Teléfono");
+        jLabel3.setText("Teléfonos");
 
         txtRutNew.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -332,7 +332,7 @@ public class VClientes extends javax.swing.JPanel {
         btnGuardar.setBorder(null);
         btnGuardar.setBorderPainted(false);
         btnGuardar.setContentAreaFilled(false);
-        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnGuardar.setIconTextGap(-3);
         btnGuardar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botonGraph/btnInfo3.jpg"))); // NOI18N
@@ -350,7 +350,7 @@ public class VClientes extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -359,7 +359,7 @@ public class VClientes extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(cboSexoNew, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                         .addComponent(jLabel9))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -428,7 +428,7 @@ public class VClientes extends javax.swing.JPanel {
 
         jLabel11.setText("Nombre");
 
-        jLabel12.setText("Teléfono");
+        jLabel12.setText("Fonos");
 
         txtRut.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -506,7 +506,7 @@ public class VClientes extends javax.swing.JPanel {
         btnModificar.setBorder(null);
         btnModificar.setBorderPainted(false);
         btnModificar.setContentAreaFilled(false);
-        btnModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnModificar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnModificar.setIconTextGap(-3);
         btnModificar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botonGraph/btnInfo3.jpg"))); // NOI18N
@@ -525,7 +525,7 @@ public class VClientes extends javax.swing.JPanel {
         brnListarPorRut.setBorder(null);
         brnListarPorRut.setBorderPainted(false);
         brnListarPorRut.setContentAreaFilled(false);
-        brnListarPorRut.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        brnListarPorRut.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         brnListarPorRut.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         brnListarPorRut.setIconTextGap(-3);
         brnListarPorRut.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botonGraph/btnDefault3.jpg"))); // NOI18N
@@ -544,7 +544,7 @@ public class VClientes extends javax.swing.JPanel {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -553,7 +553,7 @@ public class VClientes extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(cboSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                         .addComponent(jLabel18))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -633,7 +633,7 @@ public class VClientes extends javax.swing.JPanel {
         btnActivos.setBorder(null);
         btnActivos.setBorderPainted(false);
         btnActivos.setContentAreaFilled(false);
-        btnActivos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnActivos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnActivos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnActivos.setIconTextGap(-3);
         btnActivos.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botonGraph/btnDefault3.jpg"))); // NOI18N
@@ -652,7 +652,7 @@ public class VClientes extends javax.swing.JPanel {
         btnEliminados.setBorder(null);
         btnEliminados.setBorderPainted(false);
         btnEliminados.setContentAreaFilled(false);
-        btnEliminados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminados.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnEliminados.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnEliminados.setIconTextGap(-3);
         btnEliminados.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botonGraph/btnDefault3.jpg"))); // NOI18N
@@ -1092,7 +1092,7 @@ public class VClientes extends javax.swing.JPanel {
         modelo.addColumn("Rut");
         modelo.addColumn("Nombre");
         modelo.addColumn("Email");
-        modelo.addColumn("Teléfono");
+        modelo.addColumn("Teléfonos");
         tblListar.setModel(modelo);
         FnCliente datbd= new FnCliente();
         int cont =0;

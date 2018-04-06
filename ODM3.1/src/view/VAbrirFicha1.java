@@ -368,7 +368,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
         lblIdInstitucion.setText("0");
 
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel23.setText("Teléfono      :");
+        jLabel23.setText("Teléfonos    :");
 
         txtInstitucion.setEditable(false);
 
@@ -406,10 +406,13 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
                     .addComponent(jLabel11))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtTelefonoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtRutCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(248, 248, 248)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(txtRutCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(248, 248, 248))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(txtTelefonoCliente)
+                                .addGap(17, 17, 17)))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
@@ -859,7 +862,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
         btnGuardarObs.setBorder(null);
         btnGuardarObs.setBorderPainted(false);
         btnGuardarObs.setContentAreaFilled(false);
-        btnGuardarObs.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardarObs.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnGuardarObs.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnGuardarObs.setIconTextGap(-3);
         btnGuardarObs.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botonGraph/btnInfo3.jpg"))); // NOI18N
@@ -1002,7 +1005,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
         btnImprimir.setBorder(null);
         btnImprimir.setBorderPainted(false);
         btnImprimir.setContentAreaFilled(false);
-        btnImprimir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnImprimir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnImprimir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnImprimir.setIconTextGap(-3);
         btnImprimir.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botonGraph/btnInfo3.jpg"))); // NOI18N
@@ -1021,7 +1024,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
         btnGarantia.setBorder(null);
         btnGarantia.setBorderPainted(false);
         btnGarantia.setContentAreaFilled(false);
-        btnGarantia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGarantia.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnGarantia.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnGarantia.setIconTextGap(-3);
         btnGarantia.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botonGraph/btnMail3.jpg"))); // NOI18N
@@ -1169,7 +1172,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
         btnGuardar.setBorder(null);
         btnGuardar.setBorderPainted(false);
         btnGuardar.setContentAreaFilled(false);
-        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGuardar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnGuardar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnGuardar.setIconTextGap(-3);
         btnGuardar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botonGraph/btnDefault3.jpg"))); // NOI18N
@@ -1337,7 +1340,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
         btnPagar.setBorder(null);
         btnPagar.setBorderPainted(false);
         btnPagar.setContentAreaFilled(false);
-        btnPagar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPagar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnPagar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnPagar.setIconTextGap(-3);
         btnPagar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botonGraph/btnInfo3.jpg"))); // NOI18N
@@ -1596,7 +1599,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
         btnDespachar.setBorder(null);
         btnDespachar.setBorderPainted(false);
         btnDespachar.setContentAreaFilled(false);
-        btnDespachar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDespachar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnDespachar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnDespachar.setIconTextGap(-3);
         btnDespachar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/botonGraph/btnInfo3.jpg"))); // NOI18N
@@ -1614,7 +1617,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
             .addGroup(pnlDespachoLayout.createSequentialGroup()
                 .addGroup(pnlDespachoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel53, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel51, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(jLabel51, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
                     .addComponent(jLabel49, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel48, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel47, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1645,7 +1648,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDespachoLayout.createSequentialGroup()
                                 .addComponent(chkRetiraCliente)
                                 .addGap(117, 117, 117))
-                            .addComponent(txtCiudad1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                            .addComponent(txtCiudad1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(cboSexo1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(pnlDespachoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1797,7 +1800,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
             .addGroup(pnlDespacho1Layout.createSequentialGroup()
                 .addGroup(pnlDespacho1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel63, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel61, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(jLabel61, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
                     .addComponent(jLabel59, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel58, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel57, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
