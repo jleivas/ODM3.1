@@ -222,13 +222,14 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
         txtFechaDespacho1 = new com.toedter.calendar.JDateChooser();
         lblRutActual = new javax.swing.JLabel();
         btnDespachar = new javax.swing.JButton();
+        txtTelefono2 = new javax.swing.JTextField();
         pnlDespacho1 = new javax.swing.JPanel();
         jLabel57 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
         txtRut2 = new javax.swing.JTextField();
         txtNombre2 = new javax.swing.JTextField();
-        txtTelefono2 = new javax.swing.JTextField();
+        txtTelefonos = new javax.swing.JTextField();
         jLabel60 = new javax.swing.JLabel();
         txtEmail2 = new javax.swing.JTextField();
         jLabel61 = new javax.swing.JLabel();
@@ -1500,7 +1501,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
 
         jLabel48.setText("Nombre");
 
-        jLabel49.setText("Teléfono");
+        jLabel49.setText("Teléfonos");
 
         txtRut1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -1514,6 +1515,11 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
             }
         });
 
+        txtTelefono1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTelefono1ActionPerformed(evt);
+            }
+        });
         txtTelefono1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtTelefono1KeyTyped(evt);
@@ -1610,6 +1616,12 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
             }
         });
 
+        txtTelefono2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefono2KeyTyped(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlDespachoLayout = new javax.swing.GroupLayout(pnlDespacho);
         pnlDespacho.setLayout(pnlDespachoLayout);
         pnlDespachoLayout.setHorizontalGroup(
@@ -1627,8 +1639,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
                     .addGroup(pnlDespachoLayout.createSequentialGroup()
                         .addGroup(pnlDespachoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtRut1, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
-                            .addComponent(txtNombre1)
-                            .addComponent(txtTelefono1))
+                            .addComponent(txtNombre1))
                         .addGroup(pnlDespachoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlDespachoLayout.createSequentialGroup()
                                 .addGap(18, 18, 18)
@@ -1661,7 +1672,11 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnDespachar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtComuna1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(txtDireccion1))
+                    .addComponent(txtDireccion1)
+                    .addGroup(pnlDespachoLayout.createSequentialGroup()
+                        .addComponent(txtTelefono1, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtTelefono2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
         pnlDespachoLayout.setVerticalGroup(
@@ -1686,7 +1701,8 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDespachoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel49)
-                    .addComponent(txtTelefono1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTelefono1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTelefono2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDespachoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel51)
@@ -1714,7 +1730,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
 
         jLabel58.setText("Nombre");
 
-        jLabel59.setText("Teléfono");
+        jLabel59.setText("Teléfonos");
 
         txtRut2.setEditable(false);
         txtRut2.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1730,10 +1746,10 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
             }
         });
 
-        txtTelefono2.setEditable(false);
-        txtTelefono2.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtTelefonos.setEditable(false);
+        txtTelefonos.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtTelefono2KeyTyped(evt);
+                txtTelefonosKeyTyped(evt);
             }
         });
 
@@ -1800,7 +1816,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
             .addGroup(pnlDespacho1Layout.createSequentialGroup()
                 .addGroup(pnlDespacho1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel63, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel61, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                    .addComponent(jLabel61, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel59, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel58, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel57, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1813,10 +1829,10 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
                                 .addGroup(pnlDespacho1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtRut2, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
                                     .addComponent(txtNombre2)
-                                    .addComponent(txtTelefono2))
+                                    .addComponent(txtTelefonos))
                                 .addGap(60, 60, 60)
                                 .addComponent(jLabel60)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDespacho1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jLabel66)
@@ -1837,7 +1853,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
                             .addComponent(txtEdad2, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtComuna2, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(txtDireccion2))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         pnlDespacho1Layout.setVerticalGroup(
             pnlDespacho1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1858,7 +1874,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDespacho1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel59)
-                    .addComponent(txtTelefono2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTelefonos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDespacho1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel61)
@@ -1882,14 +1898,12 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
         jPanel18.setLayout(jPanel18Layout);
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pnlDespacho1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(835, 835, 835))
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(pnlDespacho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(pnlDespacho1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlDespacho, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(369, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1904,7 +1918,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
         jPanel17.setLayout(jPanel17Layout);
         jPanel17Layout.setHorizontalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, 1019, Short.MAX_VALUE)
+            .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2222,7 +2236,14 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
                     if(chkRetiraCliente.isSelected()){
                         String rut = txtRut1.getText();
                         String nombre= txtNombre1.getText().toUpperCase();
-                        String telefono = txtTelefono1.getText();
+                        String telefono=txtTelefono1.getText();
+                        if(!txtTelefono2.getText().equals("")){
+                            if(txtTelefono1.getText().equals("")){
+                                telefono = txtTelefono2.getText();
+                            }else{
+                                telefono=txtTelefono1.getText() + " / " + txtTelefono2.getText();
+                            }
+                        }
                         String email = txtEmail1.getText();
                         String direccion = txtDireccion1.getText().toUpperCase();
                         String comuna = txtComuna1.getText().toUpperCase();
@@ -2403,9 +2424,9 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombre2KeyTyped
 
-    private void txtTelefono2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefono2KeyTyped
+    private void txtTelefonosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonosKeyTyped
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelefono2KeyTyped
+    }//GEN-LAST:event_txtTelefonosKeyTyped
 
     private void txtEmail2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmail2ActionPerformed
         // TODO add your handling code here:
@@ -2459,6 +2480,18 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
     private void txtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUserActionPerformed
+
+    private void txtTelefono2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefono2KeyTyped
+        int largo = 12;
+        if(txtTelefono2.getText().length() >= largo){
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "El telefono solo debe contener hasta 12 caracteres", "Error de ingreso de datos", JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_txtTelefono2KeyTyped
+
+    private void txtTelefono1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefono1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelefono1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -2643,6 +2676,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
     private javax.swing.JTextField txtTelefono1;
     private javax.swing.JTextField txtTelefono2;
     private javax.swing.JTextField txtTelefonoCliente;
+    private javax.swing.JTextField txtTelefonos;
     private javax.swing.JTextField txtTotal;
     private javax.swing.JTextField txtTotal1;
     private javax.swing.JTextField txtUser;
@@ -2658,6 +2692,8 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
     
     private void cargarCbos() throws SQLException, ClassNotFoundException {
         
+        txtTelefono1.setText("");
+        txtTelefono2.setText("");
         
         lblIdInstitucion.setVisible(false);
         lblRutDoctor.setVisible(false);
@@ -2899,7 +2935,18 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
                 txtRut1.setEditable(false);
                 txtRut1.setText(cliente.getRut());
                 txtNombre1.setText(cliente.getNombre());
-                txtTelefono1.setText(cliente.getTelefono());
+                if(cliente.getTelefono().equals("null")){
+                    txtTelefono1.setText("");
+                    txtTelefono2.setText("");
+                }
+                else{
+                    if(cliente.getTelefono().contains("/")){
+                        int ind = cliente.getTelefono().indexOf("/");
+                        txtTelefono1.setText(cliente.getTelefono().substring(0, ind).replace("/", "").trim());
+                        txtTelefono2.setText(cliente.getTelefono().substring(ind, cliente.getTelefono().length()).replace("/", "").trim());
+                    }else
+                        txtTelefono1.setText(cliente.getTelefono());
+                } 
                 txtEmail1.setText(cliente.getEmail());
                 txtDireccion1.setText(cliente.getDireccion());
                 txtComuna1.setText(cliente.getComuna());
@@ -2913,6 +2960,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
                 txtRut1.setText("");
                 txtNombre1.setText("");
                 txtTelefono1.setText("");
+                txtTelefono2.setText("");
                 txtEmail1.setText("");
                 txtDireccion1.setText("");
                 txtComuna1.setText("");
@@ -2939,7 +2987,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
                 txtRut2.setText(cliente.getRut());
                 txtNombre2.setText(cliente.getNombre());
                 txtNombre2.setEditable(false);
-                txtTelefono2.setText(cliente.getTelefono());
+                txtTelefonos.setText(cliente.getTelefono());
                 txtEmail2.setText(cliente.getEmail());
                 txtDireccion2.setText(cliente.getDireccion());
                 txtComuna2.setText(cliente.getComuna());
@@ -2950,7 +2998,7 @@ public class VAbrirFicha1 extends javax.swing.JPanel {
                 
                 txtRut2.setText("");
                 txtNombre2.setText("");
-                txtTelefono2.setText("");
+                txtTelefonos.setText("");
                 txtEmail2.setText("");
                 txtDireccion2.setText("");
                 txtComuna2.setText("");

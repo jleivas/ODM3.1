@@ -481,7 +481,7 @@ public class VCrearFicha extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(txtTelefonoCliente1)
-                                .addGap(58, 58, 58)))
+                                .addGap(40, 40, 40)))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(chkExtranjero, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -489,9 +489,7 @@ public class VCrearFicha extends javax.swing.JPanel {
                                 .addComponent(lblIdInstitucion, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtMailCliente)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtTelefonoCliente2, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                            .addComponent(txtCiudad))
+                        .addComponent(txtCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -499,7 +497,10 @@ public class VCrearFicha extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel14)
                         .addGap(22, 22, 22)
-                        .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(txtTelefonoCliente2, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -1440,7 +1441,7 @@ public class VCrearFicha extends javax.swing.JPanel {
                 cliente.setEmail(txtMailCliente.getText());
                 cliente.setNombre(txtNombreCliente.getText().toUpperCase());
                 cliente.setSexo(cboSexo.getSelectedIndex());
-                if(txtTelefonoCliente2.getText() != null || txtTelefonoCliente2.getText().length() > 0){
+                if(txtTelefonoCliente2.getText().length() > 0){
                     cliente.setTelefono(txtTelefonoCliente1.getText() + " / " +txtTelefonoCliente2.getText());
                 }else{
                     cliente.setTelefono(txtTelefonoCliente1.getText());
@@ -1460,7 +1461,7 @@ public class VCrearFicha extends javax.swing.JPanel {
                 cliente.setEmail(txtMailCliente.getText());
                 cliente.setNombre(txtNombreCliente.getText().toUpperCase());
                 cliente.setSexo(cboSexo.getSelectedIndex());
-                if(txtTelefonoCliente2.getText() != null || txtTelefonoCliente2.getText().length() > 0){
+                if(txtTelefonoCliente2.getText().length() > 0){
                     cliente.setTelefono(txtTelefonoCliente1.getText() + " / " +txtTelefonoCliente2.getText());
                 }else{
                     cliente.setTelefono(txtTelefonoCliente1.getText());
@@ -1905,10 +1906,10 @@ public class VCrearFicha extends javax.swing.JPanel {
                 if(temp.getTelefono() != null){
                     if(temp.getTelefono().contains("/")){
                         int ind = temp.getTelefono().indexOf("/");
-                        txtTelefonoCliente1.setText(temp.getTelefono().substring(0, ind));
-                        txtTelefonoCliente2.setText(temp.getTelefono().substring(ind, temp.getTelefono().length()));
+                        txtTelefonoCliente1.setText(temp.getTelefono().substring(0, ind).replace("/", "").trim());
+                        txtTelefonoCliente2.setText(temp.getTelefono().substring(ind, temp.getTelefono().length()).replace("/", "").trim());
                     }else{
-                        txtTelefonoCliente1.setText(temp.getTelefono());
+                        txtTelefonoCliente1.setText(temp.getTelefono().replace("/", "").trim());
                         txtTelefonoCliente2.setText("");
                     } 
                 }
@@ -1946,10 +1947,10 @@ public class VCrearFicha extends javax.swing.JPanel {
                 if(temp.getTelefono() != null){
                     if(temp.getTelefono().contains("/")){
                         int ind = temp.getTelefono().indexOf("/");
-                        txtTelefonoCliente1.setText(temp.getTelefono().substring(0, ind));
-                        txtTelefonoCliente2.setText(temp.getTelefono().substring(ind, temp.getTelefono().length()));
+                        txtTelefonoCliente1.setText(temp.getTelefono().substring(0, ind).replace("/", "").trim());
+                        txtTelefonoCliente2.setText(temp.getTelefono().substring(ind, temp.getTelefono().length()).replace("/", "").trim());
                     }else{
-                        txtTelefonoCliente1.setText(temp.getTelefono());
+                        txtTelefonoCliente1.setText(temp.getTelefono().replace("/", "").trim());
                         txtTelefonoCliente2.setText("");
                     } 
                 }

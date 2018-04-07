@@ -1312,7 +1312,7 @@
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Cursor Por defecto"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                             <Property name="iconTextGap" type="int" value="-3"/>
@@ -1535,7 +1535,7 @@
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Cursor Por defecto"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                             <Property name="iconTextGap" type="int" value="-3"/>
@@ -1571,7 +1571,7 @@
                             <Property name="borderPainted" type="boolean" value="false"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                              <Color id="Default Cursor"/>
+                              <Color id="Cursor Por defecto"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                             <Property name="iconTextGap" type="int" value="-3"/>
@@ -1702,7 +1702,7 @@
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Default Cursor"/>
+                  <Color id="Cursor Por defecto"/>
                 </Property>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
                 <Property name="iconTextGap" type="int" value="-3"/>
@@ -2105,7 +2105,7 @@
                     <Property name="borderPainted" type="boolean" value="false"/>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                      <Color id="Default Cursor"/>
+                      <Color id="Cursor Por defecto"/>
                     </Property>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                     <Property name="iconTextGap" type="int" value="-3"/>
@@ -2213,7 +2213,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel18" alignment="0" pref="1019" max="32767" attributes="0"/>
+                  <Component id="jPanel18" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -2233,15 +2233,13 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="pnlDespacho1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="835" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="pnlDespacho" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="pnlDespacho1" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="pnlDespacho" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace pref="369" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2289,7 +2287,6 @@
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="txtRut1" alignment="0" pref="179" max="32767" attributes="0"/>
                                           <Component id="txtNombre1" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="txtTelefono1" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
@@ -2336,6 +2333,11 @@
                                       </Group>
                                   </Group>
                                   <Component id="txtDireccion1" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="txtTelefono1" min="-2" pref="87" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txtTelefono2" min="-2" pref="87" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <EmptySpace pref="30" max="32767" attributes="0"/>
                           </Group>
@@ -2368,6 +2370,7 @@
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel49" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="txtTelefono1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtTelefono2" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -2407,7 +2410,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel49">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Tel&#xe9;fono"/>
+                        <Property name="text" type="java.lang.String" value="Tel&#xe9;fonos"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtRut1">
@@ -2422,6 +2425,7 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtTelefono1">
                       <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTelefono1ActionPerformed"/>
                         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTelefono1KeyTyped"/>
                       </Events>
                     </Component>
@@ -2542,7 +2546,7 @@
                         <Property name="borderPainted" type="boolean" value="false"/>
                         <Property name="contentAreaFilled" type="boolean" value="false"/>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Default Cursor"/>
+                          <Color id="Cursor Por defecto"/>
                         </Property>
                         <Property name="horizontalTextPosition" type="int" value="0"/>
                         <Property name="iconTextGap" type="int" value="-3"/>
@@ -2555,6 +2559,11 @@
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDespacharActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JTextField" name="txtTelefono2">
+                      <Events>
+                        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTelefono2KeyTyped"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -2579,7 +2588,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="jLabel63" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel61" alignment="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel61" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabel59" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabel58" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jLabel57" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
@@ -2593,11 +2602,11 @@
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                   <Component id="txtRut2" alignment="0" pref="179" max="32767" attributes="0"/>
                                                   <Component id="txtNombre2" alignment="0" max="32767" attributes="0"/>
-                                                  <Component id="txtTelefono2" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="txtTelefonos" alignment="0" max="32767" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                                               <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace pref="25" max="32767" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="1" attributes="0">
                                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -2628,7 +2637,7 @@
                                   </Group>
                                   <Component id="txtDireccion2" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="30" max="32767" attributes="0"/>
+                              <EmptySpace pref="20" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2654,7 +2663,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jLabel59" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtTelefono2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtTelefonos" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -2693,7 +2702,7 @@
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel59">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Tel&#xe9;fono"/>
+                        <Property name="text" type="java.lang.String" value="Tel&#xe9;fonos"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtRut2">
@@ -2712,12 +2721,12 @@
                         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtNombre2KeyTyped"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JTextField" name="txtTelefono2">
+                    <Component class="javax.swing.JTextField" name="txtTelefonos">
                       <Properties>
                         <Property name="editable" type="boolean" value="false"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTelefono2KeyTyped"/>
+                        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTelefonosKeyTyped"/>
                       </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="jLabel60">
