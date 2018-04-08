@@ -1,33 +1,21 @@
 package dao;
 
 
-import dao.InfoDao;
 import entities.Cliente;
 import entities.Ficha;
 import entities.HistorialPago;
 import entities.Info;
 import fn.FnTipoPago;
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Frame;
 import java.awt.Graphics;
 import java.awt.PrintJob;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 
 
@@ -155,12 +143,13 @@ public class Programa extends JFrame
         
         public void imprimir_Cita(String [] text)
         {
-        int calibracion = -18;
-        int calibracion1 = -30;
-        int calibracion0 = -13;
-        int calibracion2 = -3;
-        int calibracion3 = -50;
-        int calibracionObs = 0;
+            int calTitulos1 = CalibracionGlobal.ALT_TITULOS;
+            int calLejos2 = CalibracionGlobal.ALT_LENTE_LEJOS;
+            int calLCerca3 = CalibracionGlobal.ALT_LENTE_CERCA;
+            int calObs4 = CalibracionGlobal.ALT_OBS;
+            int calResumenComprobante5 = CalibracionGlobal.ALT_RESUMEN;
+            int calDatosEntrega6 = CalibracionGlobal.ALT_DATOS_ENTREGA;
+        
             
         Frame f = new Frame ("Imprimir");
         f.pack();
@@ -170,63 +159,65 @@ public class Programa extends JFrame
         pg.setFont(new Font ("Arial", Font.ITALIC, 10)); 
          //dibuja el string guardado en el objeto texto de la clase String, y lo sitúa en la posición cuyas coordenadas vienen dadas por los dos números enteros que le siguen.
                                  //x , y //el aumenta 20 por fila    //81
-           pg.drawString(text[0], 105, (80+calibracion1));//fecha
-           pg.drawString(text[1], 465, (80+calibracion1));//folio
-           pg.drawString(text[2], 150, (100+calibracion1));//lugar_entrega
-           pg.drawString(text[3], 465, (100+calibracion1));//fecha_entrega
-           pg.drawString(text[39], 123, (119+calibracion1));//datos_cliente
-           pg.drawString(text[40], 123, (130+calibracion1));//direccion_cliente
+           pg.drawString(text[0], 105 + CalibracionGlobal.L_FECHA, (80+calTitulos1));//fecha
+           pg.drawString(text[1], 465 + CalibracionGlobal.L_FOLIO, (80+calTitulos1));//folio
+           pg.drawString(text[2], 150 + CalibracionGlobal.L_LUGAR_ENTREGA_1, (100+calTitulos1));//lugar_entrega
+           pg.drawString(text[3], 465 + CalibracionGlobal.L_FECHA_ENTREGA_1, (100+calTitulos1));//fecha_entrega
+           pg.drawString(text[39], 123 + CalibracionGlobal.L_DATOS_CLIENTE, (119+calTitulos1));//datos_cliente
+           pg.drawString(text[40], 123 + CalibracionGlobal.L_DIRECCION_CLIENTE, (130+calTitulos1));//direccion_cliente
            pg.setFont(new Font ("Arial", Font.BOLD, 10)); 
-           pg.drawString(text[41], 123, (141+calibracion1));//valor_total
+           pg.drawString(text[41], 123 + CalibracionGlobal.L_VALOR_TOTAL_1, (141+calTitulos1));//valor_total
            pg.setFont(new Font ("Arial", Font.ITALIC, 10)); 
-           pg.drawString(text[24], 123, (147+calibracion));//lejos_marca------inicio lejos
-           pg.drawString(text[5], 123, (158+calibracion));//lejos_cristal
-           pg.drawString(text[6], 123, (169+calibracion));//OD_ESF
-           pg.drawString(text[30], 175, (170+calibracion));//OD_CIL
-           pg.drawString(text[31], 290, (170+calibracion));//OD_A
-           pg.drawString(text[7], 123, (180+calibracion));//OI_ESF
-           pg.drawString(text[32], 175, (180+calibracion));//OI_CIL
-           pg.drawString(text[33], 290, (180+calibracion));//OI_A
-           pg.drawString(text[8], 123, (192+calibracion));//DP_cristal
+           pg.drawString(text[24], 123 + CalibracionGlobal.L_LEJOS_MARCA, (147+calLejos2));//lejos_marca------inicio lejos
+           pg.drawString(text[5], 123 + CalibracionGlobal.L_LEJOS_CRISTAL, (158+calLejos2));//lejos_cristal
+           pg.drawString(text[6], 123 + CalibracionGlobal.L_LEJOS_OD_ESF, (169+calLejos2));//OD_ESF
+           pg.drawString(text[30], 175 + CalibracionGlobal.L_LEJOS_OD_CIL, (170+calLejos2));//OD_CIL
+           pg.drawString(text[31], 290 + CalibracionGlobal.L_LEJOS_OD_A, (170+calLejos2));//OD_A
+           pg.drawString(text[7], 123 + CalibracionGlobal.L_LEJOS_OI_ESF, (180+calLejos2));//OI_ESF
+           pg.drawString(text[32], 175 + CalibracionGlobal.L_LEJOS_OI_CIL, (180+calLejos2));//OI_CIL
+           pg.drawString(text[33], 290 + CalibracionGlobal.L_LEJOS_OI_A, (180+calLejos2));//OI_A
+           pg.drawString(text[8], 123 + CalibracionGlobal.L_LEJOS_DP_CRISTAL, (192+calLejos2));//DP_cristal
            pg.setFont(new Font ("Verdana", Font.BOLD, 10));// X
-           pg.drawString(text[9], 280, (192+calibracion));//endurecido_cristal
-           pg.drawString(text[10],345, (192+calibracion));//capa_cristal
-           pg.drawString(text[11],430, (192+calibracion));//plis_max_cristal ----fin lejos
+           pg.drawString(text[9], 280 + CalibracionGlobal.L_LEJOS_ENDURECIDO_CRISTAL, (192+calLejos2));//endurecido_cristal
+           pg.drawString(text[10],345 + CalibracionGlobal.L_LEJOS_CAPA_CRISTAL, (192+calLejos2));//capa_cristal
+           pg.drawString(text[11],430 + CalibracionGlobal.L_LEJOS_PLUS_MAX, (192+calLejos2));//plis_max_cristal ----fin lejos
            pg.setFont(new Font ("Arial", Font.ITALIC, 10));
-           pg.drawString(text[25], 123, (230+calibracion0));//cerca_marca------inicio cerca
-           pg.drawString(text[12], 123, (241+calibracion0));//cerca_cristal
-           pg.drawString(text[38], 465, (241+calibracion0));//ADD
-           pg.drawString(text[13], 123, (252+calibracion0));//OD_cristal
-           pg.drawString(text[34], 175, (252+calibracion0));//OD_CIL
-           pg.drawString(text[35], 293, (252+calibracion0));//OD_A
-           pg.drawString(text[14], 123, (263+calibracion0));//OI_cristal
-           pg.drawString(text[36], 175, (263+calibracion0));//OI_CIL
-           pg.drawString(text[37], 293, (263+calibracion0));//OI_A
-           pg.drawString(text[15], 123, (274+calibracion0));//DP_cristal
+           pg.drawString(text[25], 123 + CalibracionGlobal.L_CERCA_MARCA, (230+calLCerca3));//cerca_marca------inicio cerca
+           pg.drawString(text[12], 123 + CalibracionGlobal.L_CERCA_CRISTAL, (241+calLCerca3));//cerca_cristal
+           pg.drawString(text[38], 465 + CalibracionGlobal.L_CERCA_ADD, (241+calLCerca3));//ADD
+           pg.drawString(text[13], 123 + CalibracionGlobal.L_CERCA_OD_ESF, (252+calLCerca3));//OD_cristal
+           pg.drawString(text[34], 175 + CalibracionGlobal.L_CERCA_OD_CIL, (252+calLCerca3));//OD_CIL
+           pg.drawString(text[35], 293 + CalibracionGlobal.L_CERCA_OD_A, (252+calLCerca3));//OD_A
+           pg.drawString(text[14], 123 + CalibracionGlobal.L_CERCA_OI_ESF, (263+calLCerca3));//OI_cristal
+           pg.drawString(text[36], 175 + CalibracionGlobal.L_CERCA_OI_CIL, (263+calLCerca3));//OI_CIL
+           pg.drawString(text[37], 293 + CalibracionGlobal.L_CERCA_OI_A, (263+calLCerca3));//OI_A
+           pg.drawString(text[15], 123 + CalibracionGlobal.L_CERCA_DP_CRISTAL, (274+calLCerca3));//DP_cristal
            pg.setFont(new Font ("Verdana", Font.BOLD, 10));// X
-           pg.drawString(text[16], 280, (274+calibracion0));//endurecido_cristal
-           pg.drawString(text[17],345, (274+calibracion0));//capa_cristal
-           pg.drawString(text[18],430, (274+calibracion0));//plusmax_cristal ----fin cerca
+           pg.drawString(text[16], 280 + CalibracionGlobal.L_CERCA_ENDURECIDO_CRISTAL, (274+calLCerca3));//endurecido_cristal
+           pg.drawString(text[17],345 + CalibracionGlobal.L_CERCA_CAPA_CRISTAL, (274+calLCerca3));//capa_cristal
+           pg.drawString(text[18],430 + CalibracionGlobal.L_CERCA_PLUS_MAX, (274+calLCerca3));//plusmax_cristal ----fin cerca
            pg.setFont(new Font ("Arial", Font.ITALIC, 10));
-           pg.drawString(text[19],70, (327+calibracionObs));//observacion
-           pg.drawString(text[0], 105, (502+calibracion2));//fecha
-           pg.drawString(text[1], 460, (502+calibracion2));//folio
+           pg.drawString(text[19],70 + CalibracionGlobal.L_OBS, (327+calObs4));//observacion
+           pg.drawString(text[0], 105 + CalibracionGlobal.L_FECHA, (502+calResumenComprobante5));//fecha
+           pg.drawString(text[1], 460 + CalibracionGlobal.L_FOLIO, (502+calResumenComprobante5));//folio
            pg.setFont(new Font ("Elephant", Font.BOLD, 15));
-           pg.drawString(text[26], 250, (532+calibracion2));//Institucion nombre
+           pg.drawString(text[26], 250 + CalibracionGlobal.L_INS_NOMBRE, (532+calResumenComprobante5));//Institucion nombre
            pg.setFont(new Font ("Calibri", Font.ITALIC, 10));
-           pg.drawString(text[27], 205, (547+calibracion2));//Institucion web
-           pg.drawString(text[28], 205, (558+calibracion2));//Institucion direccion
-           pg.drawString(text[29], 205, (569+calibracion2));//Institucion contacto
+           pg.drawString(text[27], 205 + CalibracionGlobal.L_INS_WEB, (547+calResumenComprobante5));//Institucion web
+           pg.drawString(text[28], 205 + CalibracionGlobal.L_INS_DIRECCION, (558+calResumenComprobante5));//Institucion direccion
+           pg.drawString(text[29], 205 + CalibracionGlobal.L_INS_CONTACTO, (569+calResumenComprobante5));//Institucion contacto
            pg.setFont(new Font ("Arial", Font.ITALIC, 10));
-           pg.drawString(text[4], 270, (585+calibracion2));//nombre_cliente
-           pg.drawString(text[20], 270, (603+calibracion2));//valor_total
-           pg.drawString(text[21], 270, (614+calibracion2));//abono
+           pg.drawString(text[4], 270 + CalibracionGlobal.L_NOMBRE_CLIENTE, (585+calResumenComprobante5));//nombre_cliente
+           pg.drawString(text[20], 270 + CalibracionGlobal.L_VALOR_TOTAL_2, (603+calResumenComprobante5));//valor_total
+           pg.drawString(text[21], 270 + CalibracionGlobal.L_ABONO, (614+calResumenComprobante5));//abono
            pg.setFont(new Font ("Arial", Font.BOLD, 10));
-           pg.drawString(text[22], 270, (625+calibracion2));//saldo
+           pg.drawString(text[22], 270 + CalibracionGlobal.L_SALDO, (625+calResumenComprobante5));//saldo
+           pg.setFont(new Font ("Elephant", Font.BOLD, 15));
+           pg.drawString(text[3], 58 + CalibracionGlobal.L_FECHA_ENTREGA_2, (715+calDatosEntrega6));//fecha_entrega
            pg.setFont(new Font ("Arial", Font.ITALIC, 10));
-           pg.drawString(text[3], 58, (715+calibracion3));//fecha_entrega
-           pg.drawString(text[2], 190, (715+calibracion3));//lugar_entrega
-           pg.drawString(text[23], 480, (715+calibracion3));//hora
+           pg.drawString(text[2], 190 + CalibracionGlobal.L_LUGAR_ENTREGA_2, (715+calDatosEntrega6));//lugar_entrega
+           pg.setFont(new Font ("Elephant", Font.BOLD, 15));
+           pg.drawString(text[23], 480 + CalibracionGlobal.L_HORA_ENTREGA, (715+calDatosEntrega6));//hora
           
            pg.dispose();
            pjob.end();
