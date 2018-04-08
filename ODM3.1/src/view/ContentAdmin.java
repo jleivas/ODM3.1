@@ -29,7 +29,7 @@ public class ContentAdmin extends javax.swing.JFrame {
     Boton boton = new Boton();
     FnInfo load = new FnInfo();
     public static JTextField idSesion = new JTextField();
-    public static String version = "v3.1.11";
+    public static String version = "v3.2.0";
     
     private void cerrar() throws SQLException, ClassNotFoundException{
         String botones1[] = {"Cerrar","Cancelar"};
