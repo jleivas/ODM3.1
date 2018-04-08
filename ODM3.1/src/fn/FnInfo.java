@@ -7,18 +7,30 @@ package fn;
 
 import bd.BD;
 import correo.FnEnviar;
+import dao.CalibracionGlobal;
 import dao.InfoDao;
+import dao.RegistroGlobal;
 import dao.UserDao;
 import entities.Info;
 import entities.Lente;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.Socket;
+import java.security.MessageDigest;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import javax.crypto.Cipher;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.xml.parsers.ParserConfigurationException;
+import org.apache.commons.codec.binary.Base64;
+import org.xml.sax.SAXException;
 
 /**
  *
@@ -32,6 +44,12 @@ public class FnInfo {
                 return true;
         }
         return false;
+    }
+    
+    public void loadXml() throws ParserConfigurationException, SAXException, IOException{
+        RegistroGlobal.initDataId();//carga el id del producto y la uri de la api
+        CalibracionGlobal.cargarCalibracion();//carga valores de calibracion para la impresion
+        RegistroGlobal.cargarRegistroGlobal();
     }
     
     public boolean modificar(Info info) throws SQLException, ClassNotFoundException{
@@ -274,4 +292,61 @@ public class FnInfo {
         return;
     }
 
+    public void setStaticUser(String user) {
+        RegistroGlobal.setUser(user);
+    }
+
+    public String getStaticUser() {
+        return RegistroGlobal.USERNAME;
+    }
+
+    public boolean isActive() {
+        return RegistroGlobal.LICENCIA;
+    }
+
+    public String cargarFechaLicencia() {
+        return RegistroGlobal.EXP_DATE;
+    }
+
+    public String desencriptar(String textContent) {
+        String secretKey = "qualityinfosolutions"; //llave para desenciptar datos
+        String base64EncryptedString = "";
+ 
+        try {
+            byte[] message = Base64.decodeBase64(textContent.getBytes("utf-8"));
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] digestOfPassword = md.digest(secretKey.getBytes("utf-8"));
+            byte[] keyBytes = Arrays.copyOf(digestOfPassword, 24);
+            SecretKey key = new SecretKeySpec(keyBytes, "DESede");
+ 
+            Cipher decipher = Cipher.getInstance("DESede");
+            decipher.init(Cipher.DECRYPT_MODE, key);
+ 
+            byte[] plainText = decipher.doFinal(message);
+ 
+            base64EncryptedString = new String(plainText, "UTF-8");
+ 
+        } catch (Exception ex) {
+        }
+        return base64EncryptedString;
+    }
+
+    public String getDbPass() {
+        return RegistroGlobal.PASS;
+    }
+
+    public boolean isConnected(){
+        String dirWeb = "www.softdirex.cl";
+        int puerto = 80;
+        try{
+            Socket s = new Socket(dirWeb, puerto);
+            if(s.isConnected()){
+              System.out.println("Conexión establecida con la dirección: " +  dirWeb + " a travéz del puerto: " + puerto);
+            }
+        }catch(Exception e){
+            System.err.println("No se pudo establecer conexión con: " + dirWeb + " a travéz del puerto: " + puerto);
+            return false;
+        }
+        return true;
+    }
 }
