@@ -29,7 +29,33 @@ public class ContentAdmin extends javax.swing.JFrame {
     Boton boton = new Boton();
     FnInfo load = new FnInfo();
     public static JTextField idSesion = new JTextField();
-    public static String version = "v3.1.10";
+    public static String version = "v3.1.11";
+    
+    private void cerrar() throws SQLException, ClassNotFoundException{
+        String botones1[] = {"Cerrar","Cancelar"};
+        int opcion = JOptionPane.showOptionDialog(this, "¿Desea cerrar la aplicación?", "Cerrar", 0, 0, null, botones1, this);
+        if(opcion == JOptionPane.YES_OPTION){
+            String botones2[] = {"Aceptar","Anular"};
+            if(load.isConnected()){
+                opcion = JOptionPane.showOptionDialog(this, "Se respaldará la base de datos", "Respaldar", 0, 0, null, botones2, this);
+                if(opcion == JOptionPane.YES_OPTION){
+                    try{
+                        if(load.isActive()){
+                            new Splash().setVisible(true);
+                            load.crearBackUp("sdxod", "root", load.getDbPass());
+                        }else
+                           JOptionPane.showMessageDialog(null,"No se pueden respaldar los datos,\ntoda la información se puede perder si no renueva su licencia.","Es necesaria la renovación de la Licencia",JOptionPane.WARNING_MESSAGE); 
+                    }catch(Exception e){
+                        JOptionPane.showMessageDialog(null, "No se pudo ejecutar el respaldo","Error",JOptionPane.WARNING_MESSAGE);
+                    }
+                }else{
+                    JOptionPane.showMessageDialog(null,"La información valiosa del sistema podría perderse para siempre.\nHaga respaldo de datos periódicamente por su seguridad.","Es necesario respaldar la base de datos",JOptionPane.WARNING_MESSAGE); 
+                }
+            }
+            
+            System.exit(0);
+        }   
+    }
     /**
      * Creates new form ContentAdmin
      * @throws java.sql.SQLException
@@ -37,6 +63,7 @@ public class ContentAdmin extends javax.swing.JFrame {
      */
     public ContentAdmin() throws SQLException, ClassNotFoundException{
         initComponents();
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         iniciar();
         
     }
@@ -95,6 +122,11 @@ public class ContentAdmin extends javax.swing.JFrame {
         jMenuItem5.setText("jMenuItem5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -547,7 +579,8 @@ public class ContentAdmin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    
     private void btnNuevaFichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaFichaActionPerformed
         try {
             boton.nuevaFicha();
@@ -666,14 +699,19 @@ public class ContentAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        FnInfo load = new FnInfo();
-        try {
-            load.crearBackUp("sdxod", "root", "20075321818");
-        } catch (SQLException ex) {
-            Logger.getLogger(ContentAdmin.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ContentAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        if(load.isActive()){
+            new Splash().setVisible(true);
+            try {
+                
+                load.crearBackUp("sdxod", "root", load.getDbPass());
+            } catch (SQLException | ClassNotFoundException ex) {
+                Logger.getLogger(ContentAdmin.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else{
+            JOptionPane.showMessageDialog(null,"No se pueden respaldar los datos,\ntoda la información se puede perder si no renueva su licencia.","Es necesaria la renovación de la Licencia",JOptionPane.WARNING_MESSAGE);
         }
+        
+            
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void mnuCristalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCristalesActionPerformed
@@ -779,13 +817,17 @@ public class ContentAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMisRegistrosActionPerformed
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
-        if(validarAdmin()){
-            try {
-                boton.reporteVentas();
-            } catch (SQLException | ClassNotFoundException ex) {
-                Logger.getLogger(ContentAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        if(load.isActive()){
+            if(validarAdmin()){
+                try {
+                    boton.reporteVentas();
+                } catch (SQLException | ClassNotFoundException ex) {
+                    Logger.getLogger(ContentAdmin.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
-        }
+        }else{
+            JOptionPane.showMessageDialog(null,"No se pueden generar reportes,\nLa licencia del producto se encuentra obsoleta.","Es necesaria la renovación de la Licencia",JOptionPane.INFORMATION_MESSAGE);
+        }   
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void mnuCargarFichaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCargarFichaActionPerformed
@@ -807,6 +849,16 @@ public class ContentAdmin extends javax.swing.JFrame {
         }
         return;
     }//GEN-LAST:event_mnuCargarFichaActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        try {
+            cerrar();
+        } catch (SQLException ex) {
+            Logger.getLogger(ContentAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ContentAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
@@ -939,7 +991,12 @@ public class ContentAdmin extends javax.swing.JFrame {
         centrarPantalla();
         Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/img/icon.png"));
         setIconImage(icon);
-        this.setTitle("Optidata "+version);
+        String licencia;
+        if(load.isActive())
+            licencia = "Producto bajo licencia hasta el "+load.cargarFechaLicencia();
+        else
+            licencia = "La licencia de este producto ha caducado";
+        this.setTitle("Optidata "+version+"     "+licencia);
         sesion.setVisible(false);
         entrar();
     }

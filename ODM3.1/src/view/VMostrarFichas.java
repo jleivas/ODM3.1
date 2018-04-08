@@ -6,10 +6,9 @@
 package view;
 
 import entities.Ficha;
-import entities.User;
 import fn.Boton;
 import fn.FnFicha;
-import fn.FnUser;
+import fn.FnInfo;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.sql.SQLException;
@@ -628,9 +627,12 @@ public class VMostrarFichas extends javax.swing.JPanel {
         Date fecha2 = txtHasta1.getDate();
         
         FnFicha load = new FnFicha();
-        
+        FnInfo info = new FnInfo();
         try {
-            load.enviarReporte(fecha1,fecha2,load.listarPorFecha(fecha1,fecha2));
+            if(info.isActive())
+                load.enviarReporte(fecha1,fecha2,load.listarPorFecha(fecha1,fecha2));
+            else
+                JOptionPane.showMessageDialog(null,"No se pueden enviar reportes,\nLa licencia del producto se encuentra obsoleta.","Es necesaria la renovación de la Licencia",JOptionPane.INFORMATION_MESSAGE);
         } catch (SQLException | ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Error desconocido:"+ex.getMessage(),"Error",JOptionPane.WARNING_MESSAGE);
         }

@@ -27,6 +27,15 @@ public class Acceso extends javax.swing.JFrame {
     
     public Acceso() {
         initComponents();
+        
+        try{
+           load.loadXml(); 
+        }catch(Exception e){
+            System.out.println("Acceso: Error al cargar xml");
+        }
+        if(!load.isActive())
+            JOptionPane.showMessageDialog(null,"La licencia ha caducado","Es necesaria la renovación de la Licencia",JOptionPane.INFORMATION_MESSAGE);
+        txtUser.setText(load.getStaticUser());
         load.probarConexion();
         int ancho = java.awt.Toolkit.getDefaultToolkit().getScreenSize().width;
         int alto = java.awt.Toolkit.getDefaultToolkit().getScreenSize().height;
@@ -129,29 +138,8 @@ public class Acceso extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        // LEER XML desde internet
-        /*  LICENCIA DE PAGO COMPLETO   */
+        
         entrar(); 
-        int i;
-        /*  LICENCIA MENSUAL            */
-//        Procesos pr = new Procesos();
-//        try {
-//            if(pr.serialActivo()){
-//                entrar();
-//            }else{
-//                String serial =JOptionPane.showInputDialog("Ingrese licencia mensual entregada por su proveedor.");
-//                if(pr.validarSerial(serial)){
-//                    entrar();
-//                }else{
-//                    JOptionPane.showMessageDialog(null, "Error de activación: el serial no corresponde, póngase en contacto con su proveedor.");
-//                    dispose();
-//                }
-//            }
-//        } catch (SQLException ex) {
-//            Logger.getLogger(Acceso.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (ClassNotFoundException ex) {
-//            Logger.getLogger(Acceso.class.getName()).log(Level.SEVERE, null, ex);
-//        }
         
     }//GEN-LAST:event_btnEntrarActionPerformed
 
@@ -208,7 +196,8 @@ public class Acceso extends javax.swing.JFrame {
                             ContentAdmin principalAdmin = new ContentAdmin();
                             principalAdmin.setVisible(true);
                             principalAdmin.setIdSesion(usu.getId());
-                            dispose();
+                            load.setStaticUser(user);
+                            this.dispose();
                         }catch(Exception ex){
                             JOptionPane.showMessageDialog(null, "Error. No se pueden cargar los datos."+ex,"Datos de acceso",JOptionPane.WARNING_MESSAGE);
                         }
